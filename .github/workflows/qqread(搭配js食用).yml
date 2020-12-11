@@ -24,7 +24,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          repository: z2691523/jd_ipa
+          repository: z2691523/qqreads/Task
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
