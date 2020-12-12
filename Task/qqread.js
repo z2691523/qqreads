@@ -576,13 +576,11 @@ function qqreadtrack() {
 
   });
 	
-
 }
-
 
 // 视频奖励
 
-#function qqreadvideo() {
+function qqreadvideo() {
 
   return new Promise((resolve, reject) => {
 
@@ -717,92 +715,6 @@ function qqreadbox2() {
       resolve();
 
     });
-
-  });
-
-}
-
-// 本周阅读时长奖励任务
-
-#function qqreadpick() {
-
-  return new Promise((resolve, reject) => {
-
-    const toqqreadpickurl = {
-
-      url: `https://mqqapi.reader.qq.com/mqq/pickPackageInit`,
-
-      headers: JSON.parse(qqreadtimeheaderVal),
-
-    };
-
-    if (wktime.data.readTime >= wktimess && wktime.data.readTime <= 1250) {
-
-      $.get(toqqreadpickurl, (error, response, data) => {
-
-        if (logs) $.log(`${jsname},周阅读时长奖励任务: ${data}`);
-
-        pick = JSON.parse(data);
-
-        if (pick.data[7].isPick == true) tz += "【周时长奖励】:已全部领取\n";
-
-        for (let i = 0; i < pick.data.length; i++) {
-
-          setTimeout(() => {
-
-            const pickid = pick.data[i].readTime;
-
-            const Packageid = [
-
-              "10",
-
-              "10",
-
-              "20",
-
-              "30",
-
-              "50",
-
-              "80",
-
-              "100",
-
-              "120",
-
-            ];
-
-            const toqqreadPackageurl = {
-
-              url: `https://mqqapi.reader.qq.com/mqq/pickPackage?readTime=${pickid}`,
-
-              headers: JSON.parse(qqreadtimeheaderVal),
-
-              timeout: 60000,
-
-            };
-
-            $.get(toqqreadPackageurl, (error, response, data) => {
-
-              if (logs) $.log(`${jsname}, 领周阅读时长: ${data}`);
-
-              Package = JSON.parse(data);
-
-              if (Package.code == 0)
-
-                tz += `【周时长奖励${i + 1}】:领取${Packageid[i]}阅豆\n`;
-
-            });
-
-          }, i * 100);
-
-        }
-
-      });
-
-      resolve();
-
-    }
 
   });
 
