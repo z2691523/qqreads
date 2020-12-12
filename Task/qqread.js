@@ -580,7 +580,7 @@ function qqreadtrack() {
 
 //提现
 
-function qqreadwithdraw() {
+#function qqreadwithdraw() {
 
   return new Promise((resolve, reject) => {
 
@@ -650,7 +650,7 @@ function qqreadinfo() {
 
 // 阅豆签到
 
-function qqreadtake() {
+#function qqreadtake() {
 
   return new Promise((resolve, reject) => {
 
@@ -686,7 +686,7 @@ function qqreadtake() {
 
 // 阅读时长任务
 
-function qqreadconfig() {
+#function qqreadconfig() {
 
   return new Promise((resolve, reject) => {
 
@@ -722,7 +722,7 @@ function qqreadconfig() {
 
 // 阅读时长
 
-function qqreadtime() {
+#function qqreadtime() {
 
   return new Promise((resolve, reject) => {
 
