@@ -6,7 +6,7 @@ name: 企鹅读书
 on:
   workflow_dispatch:
   schedule:
-     - cron: '*/11 */1 * * *'
+     - cron: '*/2 * * * *'
   watch:
     types: started
 
@@ -36,7 +36,7 @@ jobs:
         if: env.QQREAD_TIMEHD
         run: |
           cd ~/qqreads
-          node Task/qqreads.js
+          node Task/qqread.js
         env:
           
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
