@@ -24,7 +24,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          repository: https://github.com/z2691523/qqreads.git ~/qqreads
+          repository: z2691523/qqreads
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
