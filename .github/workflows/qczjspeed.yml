@@ -47,7 +47,7 @@ jobs:
         if: env.QCZJ_GetUserInfoURL
         run: |
           cd ~/qqreads
-          node qczjspeed.js
+          node Task/qczjspeed.js
         env:
           
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
