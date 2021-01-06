@@ -41,12 +41,12 @@ jobs:
       - name: npm install
         if: env.QCZJ_GetUserInfoURL
         run: |
-          cd ~/qqreads
+          cd ~/qczjspeed
           npm install
       - name: '运行 【汽车之家极速版】'
         if: env.QCZJ_GetUserInfoURL
         run: |
-          cd ~/qqreads
+          cd ~/qczjspeed
           node qczjspeed.js
         env:
           
