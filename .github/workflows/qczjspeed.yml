@@ -33,7 +33,7 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/z2691523/qqreads
+          git clone https://github.com/z2691523/qqreads.git ~/qqreads
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
@@ -41,12 +41,12 @@ jobs:
       - name: npm install
         if: env.QCZJ_GetUserInfoURL
         run: |
-          cd ~/qczjspeed
+          cd ~/qqreads
           npm install
       - name: '运行 【汽车之家极速版】'
         if: env.QCZJ_GetUserInfoURL
         run: |
-          cd ~/qczjspeed
+          cd ~/qqreads
           node qczjspeed.js
         env:
           
